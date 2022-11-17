@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Card from './Card';
+import BigCard from './BigCard';
 import { useState, useEffect } from 'react';
 import { deleteMany } from '../../backend/models/pokemons';
 
@@ -30,6 +31,8 @@ function Home() {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>Pokedex</h1>
+
+      {!!pokemonData[0] && <BigCard {...pokemonData[0]}/>}
 
       <div id="pokemonContainer" className={styles.pokemonContainer}>
         {pokemons}

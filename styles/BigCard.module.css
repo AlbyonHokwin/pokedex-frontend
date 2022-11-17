@@ -1,0 +1,50 @@
+.floatContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background-color: #0007;
+}
+
+.pokemon {
+	background-color: #eee;
+	border-radius: 20px;
+	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
+    height: 80vmin;
+    width: 50vmin;
+}
+
+.imgContainer {
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.imgContainer span {
+	position: relative;
+	width: 90%;
+	height: 90%;
+}
+
+.info {
+	margin-top: 20px;
+}
+
+.name {
+	margin: 15px 0 7px;
+	letter-spacing: 1px;
+}
