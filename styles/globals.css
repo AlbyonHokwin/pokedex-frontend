@@ -4,9 +4,30 @@
 body {
   padding: 0;
   margin: 0;
-	font-family: 'Lato';
+  font-family: 'Lato';
 }
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --fireColor: #FDDFDF;
+  --grassColor: #DEFDE0;
+  --electricColor: #FCF7DE;
+  --waterColor: #DEF3FD;
+  --groundColor: #f4e7da;
+  --rockColor: #d5d5d4;
+  --fairyColor: #fceaff;
+  --poisonColor: #98d7a5;
+  --bugColor: #f8d5a3;
+  --dragonColor: #97b3e6;
+  --psychicColor: #eaeda1;
+  --flyingColor: #F5F5F5;
+  --fightingColor: #E6E0D4;
+  --normalColor: #F5F5F5;
+  --steelColor: #DDDDDD;
+  --iceColor: #BBDEEB;
+  --ghostColor: #D2BBDB;
+  --darkColor: #8A8A8A;
 }

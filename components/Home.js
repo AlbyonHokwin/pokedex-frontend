@@ -6,7 +6,7 @@ import { deleteMany } from '../../backend/models/pokemons';
 function Home() {
   const [pokemonData, setPokemonData] = useState([]);
   const lastId = pokemonData.length;
-  const stepId = 1;
+  const stepId = 15;
 
   const fetchPokemons = async (fromId) => {
     const response = await fetch(`http://localhost:3000/pokemons?fromId=${fromId}&toId=${fromId+stepId-1}`);
