@@ -1,57 +1,30 @@
 import styles from '../styles/Home.module.css';
 import Card from './Card';
 import { useState, useEffect } from 'react';
+import { deleteMany } from '../../backend/models/pokemons';
 
 function Home() {
   const [pokemonData, setPokemonData] = useState([]);
   const lastId = pokemonData.length;
-  const stepId = 15;
-
-  const fetchPikachu = async () => {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
-    const data = await response.json();
-    return data;
-  };
+  const stepId = 1;
 
   const fetchPokemons = async (fromId) => {
-    const pokemons = [];
-
-    if (!pokemonData[0]) {
-      const pikachuData = await fetchPikachu();
-      pokemons.push(pikachuData);
-    }
-
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${fromId}&limit=${stepId}`);
+    const response = await fetch(`http://localhost:3000/pokemons?fromId=${fromId}&toId=${fromId+stepId-1}`);
     const data = await response.json();
 
-    for (let result of data.results) {
-      let pokeResponse = await fetch(result.url)
-      let pokeData = await pokeResponse.json();
-      pokemons.push(pokeData);
-    }
-
-    setPokemonData([...pokemonData, ...pokemons]);
+    data.result && setPokemonData([...pokemonData, ...data.pokemons]);
   };
 
   const clickNext = () => {
-    fetchPokemons(lastId);
+    fetchPokemons(lastId + 1);
   }
 
   useEffect(() => {
-    fetchPokemons(lastId);
+    fetchPokemons(lastId + 1);
   }, [])
 
   const pokemons = pokemonData.map((pokemon, i) => {
-    const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1).toLowerCase();
-    const type = pokemon.types[0].type.name;
-    const sprite = pokemon.sprites.front_default;
-
-    return (<Card
-      key={i}
-      name={name}
-      type={type}
-      sprite={sprite}
-    />);
+    return (<Card key={pokemon._id} {...pokemon} />);
   })
 
   return (
