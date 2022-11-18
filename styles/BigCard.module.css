@@ -1,50 +1,85 @@
 .floatContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    background-color: #0007;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	background-color: #0007;
 }
 
 .pokemon {
 	background-color: #eee;
 	border-radius: 20px;
 	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-	margin: 10px;
-	padding: 20px;
-	text-align: center;
-    height: 80vmin;
-    width: 50vmin;
+	padding: 2vmin;
+	height: 80vmin;
+	width: 50vmin;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
 }
 
 .imgContainer {
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 50%;
-	width: 120px;
-	height: 120px;
-	text-align: center;
+	width: 40vmin;
+	height: 40vmin;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
 }
 
-.imgContainer span {
+.artContainer {
 	position: relative;
-	width: 90%;
-	height: 90%;
+	width: 60%;
+	height: 60%;
 }
 
 .info {
 	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 3vmin;
+	font-weight: 600;
+	width: 100%;
+	height: 35vmin;
 }
 
 .name {
 	margin: 15px 0 7px;
+	font-size: 2em;
 	letter-spacing: 1px;
+	height: 20%;
+	margin: 0;
+}
+
+.description {
+	height: 60%;
+	width: 100%;
+	margin: 0;
+	overflow-y: auto;
+}
+
+.type {
+	height: 20%;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	padding-top: 3vmin;
+}
+
+.spriteContainer {
+	position: absolute;
+	width: 15vmin;
+	height: 15vmin;
+	right: -3vmin;
+	bottom: -3vmin;
 }
