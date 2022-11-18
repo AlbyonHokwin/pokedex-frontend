@@ -5,6 +5,12 @@
 	margin: 10px;
 	padding: 20px;
 	text-align: center;
+	width: 170px;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .imgContainer {
@@ -19,10 +25,21 @@
 	position: relative;
 }
 
-.imgContainer span {
+.spriteContainer {
 	position: relative;
 	width: 90%;
 	height: 90%;
+}
+
+.pokemon:hover {
+	width: 180px;
+	height: 260px;
+	margin: 5px;
+}
+
+.pokemon:hover .imgContainer {
+	width: 130px;
+	height: 130px;
 }
 
 .info {
