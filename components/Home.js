@@ -6,6 +6,7 @@ import { deleteMany } from '../../backend/models/pokemons';
 
 function Home() {
   const [pokemonData, setPokemonData] = useState([]);
+  const [bigCard, setBigCard] = useState(null);
   const lastId = pokemonData.length;
   const stepId = 15;
 
@@ -24,15 +25,24 @@ function Home() {
     fetchPokemons(lastId + 1);
   }, [])
 
+
+  const displayBigCard = (data) => {
+    setBigCard(<BigCard {...data} hideBigCard={hideBigCard} />);
+  }
+
+  const hideBigCard = () => {
+    setBigCard(null);
+  }
+
   const pokemons = pokemonData.map((pokemon, i) => {
-    return (<Card key={pokemon._id} {...pokemon} />);
+    return (<Card key={pokemon._id} displayBigCard={displayBigCard} {...pokemon} />);
   })
 
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>Pokedex</h1>
 
-      {!!pokemonData[0] && <BigCard {...pokemonData[0]}/>}
+      {bigCard}
 
       <div id="pokemonContainer" className={styles.pokemonContainer}>
         {pokemons}

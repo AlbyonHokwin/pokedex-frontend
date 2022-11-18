@@ -8,7 +8,7 @@ function Card(props) {
             `linear-gradient(to bottom right, var(--${props.type[0]}Color) 49%, var(--${props.type[1]}Color) 51%)`);
     
     return (
-        <div className={styles.pokemon} style={typesColor}>
+        <div className={styles.pokemon} style={typesColor} onClick={() => props.displayBigCard(props)} >
             <div className={styles.imgContainer}>
                 <span className={styles.spriteContainer}><Image className={styles.img} src={props.sprite} alt={props.name} quality={100} priority={true} layout='fill' /></span>
             </div>
