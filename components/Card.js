@@ -5,7 +5,7 @@ function Card(props) {
     const typesColor = { background: `var(--${props.type[0]}Color)` };
     !!props.type[1] &&
         (typesColor.background =
-            `linear-gradient(to bottom right, var(--${props.type[0]}Color) 49%, var(--${props.type[1]}Color) 51%)`);
+            `linear-gradient(to bottom right, var(--${props.type[0]}Color) 50%, var(--${props.type[1]}Color) 50%)`);
     
     return (
         <div className={styles.pokemon} style={typesColor} onClick={() => props.displayBigCard(props)} >

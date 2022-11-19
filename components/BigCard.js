@@ -12,7 +12,7 @@ function BigCard(props) {
     const typesColor = { background: `var(--${props.type[0]}Color)` };
     const spriteBackground = { background: `var(--${props.type[0]}Color)` };
     if (!!props.type[1]) {
-        typesColor.background = `linear-gradient(to bottom right, var(--${props.type[0]}Color) 49%, var(--${props.type[1]}Color) 51%)`;
+        typesColor.background = `linear-gradient(to bottom right, var(--${props.type[0]}Color) 50%, var(--${props.type[1]}Color) 50%)`;
         spriteBackground.background = `var(--${props.type[1]}Color)`;
     }
 

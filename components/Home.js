@@ -17,12 +17,19 @@ function Home() {
     data.result && setPokemonData([...pokemonData, ...data.pokemons]);
   };
 
+  const fetchAllPokemons = async () => {
+    const response = await fetch(`http://localhost:3000/pokemons`);
+    const data = await response.json();
+
+    data.result && setPokemonData([...pokemonData, ...data.pokemons]);
+  };
+
   const clickNext = () => {
     fetchPokemons(lastId + 1);
   }
 
   useEffect(() => {
-    fetchPokemons(lastId + 1);
+    fetchAllPokemons();
   }, [])
 
 
@@ -48,7 +55,7 @@ function Home() {
         {pokemons}
       </div>
 
-      <button id="next" className={styles.next} onClick={() => clickNext()}>Next</button>
+      {/* <button id="next" className={styles.next} onClick={() => clickNext()}>Next</button> */}
 
     </div>
   );
